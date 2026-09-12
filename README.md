@@ -23,47 +23,58 @@ A sequência de telas prototipada reflete estritamente os passos do fluxo princi
 
 **1. Tela de Autenticação**
 *O usuário informa o seu número de celular para iniciar o acesso à plataforma.*
-![Tela 1 - Autenticação]([Cole_o_link_da_imagem_aqui])
+
+![Tela 1 - Autenticação](Pagina_1.png)
 
 **2. Tela de Validação SMS**
 *O sistema solicita o código de confirmação enviado por SMS e realiza a validação de segurança.*
-![Tela 2 - Validação SMS]([Cole_o_link_da_imagem_aqui])
+
+![Tela 2 - Validação SMS](Pagina_2.png)
 
 **3. Tela de Planos de Assinatura**
 *Apresentação dos planos disponíveis, detalhando a quantidade de refeições, a periodicidade de entrega e o valor do pacote.*
-![Tela 3 - Planos de Assinatura]([Cole_o_link_da_imagem_aqui])
+
+![Tela 3 - Planos de Assinatura](Pagina_3.png)
 
 **4. Tela de Preferências Alimentares**
 *Solicitação e armazenamento das restrições do cliente, com as opções: tradicional, vegetariana ou sem lactose.*
-![Tela 4 - Preferências Alimentares]([Cole_o_link_da_imagem_aqui])
+
+![Tela 4 - Preferências Alimentares](Pagina_4.png)
 
 **5. Tela de Pratos Principais**
 *Exibição e seleção dos pratos principais disponíveis no cardápio, filtrados pelas preferências informadas.*
-![Tela 5 - Pratos Principais]([Cole_o_link_da_imagem_aqui])
+
+![Tela 5 - Pratos Principais](Pagina_5.png)
 
 **6. Tela de Acompanhamentos**
 *Exibição e seleção das opções de acompanhamentos para compor as refeições.*
-![Tela 6 - Acompanhamentos]([Cole_o_link_da_imagem_aqui])
+
+![Tela 6 - Acompanhamentos](Pagina_6.png)
 
 **7. Tela de Sobremesas**
 *Exibição e seleção das opções de sobremesas disponíveis para o plano.*
-![Tela 7 - Sobremesas]([Cole_o_link_da_imagem_aqui])
+
+![Tela 7 - Sobremesas](Pagina_7.png)
 
 **8. Tela de Resumo do Pedido**
 *Apresentação da composição completa do pedido, agrupando os itens escolhidos para a conferência do assinante.*
-![Tela 8 - Resumo do Pedido]([Cole_o_link_da_imagem_aqui])
+
+![Tela 8 - Resumo do Pedido](Pagina_8.png)
 
 **9. Tela de Endereço de Entrega**
 *Formulário para o assinante informar, confirmar e armazenar o endereço onde as marmitas serão entregues.*
-![Tela 9 - Endereço de Entrega]([Cole_o_link_da_imagem_aqui])
+
+![Tela 9 - Endereço de Entrega](Pagina_9.png)
 
 **10. Tela de Pagamento**
 *Com a assinatura com status de Aguardando Pagamento, o sistema apresenta o valor total e solicita os dados do cartão de crédito.*
-![Tela 10 - Pagamento]([Cole_o_link_da_imagem_aqui])
+
+![Tela 10 - Pagamento](Pagina_10.png)
 
 **11. Tela de Confirmação Final**
 *Tela de sucesso gerada após a aprovação do pagamento, exibindo o número de protocolo gerado, o resumo do plano e a previsão da primeira entrega.*
-![Tela 11 - Confirmação Final]([Cole_o_link_da_imagem_aqui])
+
+![Tela 11 - Confirmação Final](Pagina_11.png)
 
 ---
 
