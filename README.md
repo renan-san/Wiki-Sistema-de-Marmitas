@@ -15,7 +15,7 @@ Apresentar o protótipo e o fluxo de navegação principal (Caminho Feliz) para 
 *   **Ator Secundário:** Operadora de Cartão de Crédito.
 
 ## Links Importantes
-*   **Protótipo Interativo (Figma):** [Insira o link público do Figma aqui]
+*   **Protótipo Interativo (Figma):** https://www.figma.com/proto/nE7LPY0XSAsMsOTVRmASM5/Sistema-de-Marmitas?node-id=0-1&t=L64IPhfzMGAJaKjZ-1
 *   **Vídeo de Apresentação:** [Insira o link do YouTube/Drive aqui]
 
 ## Fluxo de Navegação (Caminho Feliz)
