@@ -16,7 +16,7 @@ Apresentar o protótipo e o fluxo de navegação principal (Caminho Feliz) para 
 
 ## Links Importantes
 *   **Protótipo Interativo (Figma):** https://www.figma.com/proto/nE7LPY0XSAsMsOTVRmASM5/Sistema-de-Marmitas?node-id=0-1&t=L64IPhfzMGAJaKjZ-1
-*   **Vídeo de Apresentação:** [Insira o link do YouTube/Drive aqui]
+*   **Vídeo de Apresentação:** https://youtu.be/fcTLTQqnB_o?is=irvL3N6QeavnBn63
 
 ## Fluxo de Navegação (Caminho Feliz)
 A sequência de telas prototipada reflete estritamente os passos do fluxo principal:
