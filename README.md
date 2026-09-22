@@ -113,7 +113,7 @@ A sequência de telas prototipada reflete estritamente os passos do fluxo princi
   * **Atributos:** `pratosPrincipaisSelecionados`, `acompanhamentosSelecionados`, `sobremesasSelecionadas`
 * **`EnderecoEntrega`:**
   * **Descrição:** Armazena as informações do local onde as marmitas serão entregues.
-  * **Atributos:** `logradouro`, `numero`, `bairro`, `cidade`, `cep`.
+  * **Atributos:** `endereço`, `complemento`, `bairro`, `cidade`,`estado`, `cep`.
 * **`Pagamento`:**
   * **Descrição:** Modela a transação financeira da assinatura e a interação com a operadora de cartão.
   * **Atributos:** `dadosCartao`, `statusPagamento`, `dataHoraTransacao`.
