@@ -78,6 +78,48 @@ A sequência de telas prototipada reflete estritamente os passos do fluxo princi
 
 ---
 
+## Lista de Classes Candidatas Identificadas
+
+* **`Assinante`:**
+  * **Descrição:** Representa o cliente que realiza a contratação do plano de refeições e a seleção dos pratos.
+  * **Atributos:** `numeroCelular`, `codigoConfirmacao`, `statusValidacao`.
+
+---
+
+* **`PlanoAssinatura`:**
+  * **Descrição:** Define as opções de pacotes disponíveis para contratação.
+  * **Atributos:** `nomePlano`, `quantidadeRefeicoes`, `periodicidadeEntrega`, `valor`.
+* **`PreferenciasAlimentares`:**
+  * **Descrição:** Agrupa as restrições e tipos de alimentação definidos pelo assinante.
+  * **Atributos:** `tipoPreferencial` (ex: Tradicional, Vegetariana, Sem Lactose).
+* **`CardapioSemana`:**
+  * **Descrição:** Estrutura as refeições disponíveis no período ativo, filtradas conforme o plano e preferências.
+  * **Atributos:** `dataInicio`, `dataFim`, `listaRefeicoes`.
+* **`Refeicao` (Classe Base/Abstrata ou Produto):**
+  * **Descrição:** Item individual disponível no cardápio.
+  * **Atributos:** `idRefeicao`, `nome`, `categoria`.
+  * **Especializações / Subclasses:**
+    * **`PratoPrincipal`:** Opções de pratos principais disponíveis.
+    * **`Acompanhamento`:** Opções de acompanhamentos disponíveis.
+    * **`Sobremesa`:** Opções de sobremesas disponíveis.
+
+---
+
+* **`Assinatura`:**
+  * **Descrição:** Representa o contrato de assinatura ativo ou pendente do usuário no sistema.
+  * **Atributos:** `numeroProtocolo`, `statusAssinatura`, `dataAtivacao`.
+* **`PedidoPlano` / `Carrinho`:**
+  * **Descrição:** Agrupa as seleções feitas pelo assinante para o ciclo contratado.
+  * **Atributos:** `pratosPrincipaisSelecionados`, `acompanhamentosSelecionados`, `sobremesasSelecionadas`, `valorTotal`.
+* **`EnderecoEntrega`:**
+  * **Descrição:** Armazena as informações do local onde as marmitas serão entregues.
+  * **Atributos:** `logradouro`, `numero`, `bairro`, `cidade`, `cep`.
+* **`Pagamento`:**
+  * **Descrição:** Modela a transação financeira da assinatura e a interação com a operadora de cartão.
+  * **Atributos:** `dadosCartao`, `statusPagamento`, `dataHoraTransacao`.
+
+---
+
 ## Equipe e Distribuição de Responsabilidades
 *   **Renan Dos Santos Jesus (RA: 10748027)** Estruturação da WIKI e criação de telas.
 *   **João Pedro Nascimento Simões (RA: 10427517)** Estruturação do fluxo no Figma e criação de telas.
