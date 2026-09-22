@@ -110,7 +110,7 @@ A sequência de telas prototipada reflete estritamente os passos do fluxo princi
   * **Atributos:** `numeroProtocolo`, `statusAssinatura`, `dataAtivacao`.
 * **`PedidoPlano` / `Carrinho`:**
   * **Descrição:** Agrupa as seleções feitas pelo assinante para o ciclo contratado.
-  * **Atributos:** `pratosPrincipaisSelecionados`, `acompanhamentosSelecionados`, `sobremesasSelecionadas`, `valorTotal`.
+  * **Atributos:** `pratosPrincipaisSelecionados`, `acompanhamentosSelecionados`, `sobremesasSelecionadas`
 * **`EnderecoEntrega`:**
   * **Descrição:** Armazena as informações do local onde as marmitas serão entregues.
   * **Atributos:** `logradouro`, `numero`, `bairro`, `cidade`, `cep`.
