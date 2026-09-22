@@ -95,7 +95,7 @@ A sequência de telas prototipada reflete estritamente os passos do fluxo princi
 * **`CardapioSemana`:**
   * **Descrição:** Estrutura as refeições disponíveis no período ativo, filtradas conforme o plano e preferências.
   * **Atributos:** `dataInicio`, `dataFim`, `listaRefeicoes`.
-* **`Refeicao` (Classe Base/Abstrata ou Produto):**
+* **`Refeicao`:**
   * **Descrição:** Item individual disponível no cardápio.
   * **Atributos:** `idRefeicao`, `nome`, `categoria`.
   * **Especializações / Subclasses:**
