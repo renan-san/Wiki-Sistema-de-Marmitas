@@ -7,14 +7,15 @@ public class ControladorDePagamento {
 
     // 52 processarPagamento()
     public boolean processarPagamento(String dadosCartao) {
-        // 53 solicitarAutorizacao() (Simulando Operadora de Cartão)
-        boolean autorizacaoAprovada = true; 
+        // Fluxo Alternativo: Se os dados forem "0000" ou em branco, a operadora recusa
+        boolean autorizacaoAprovada = !(dadosCartao == null || dadosCartao.trim().isEmpty() || dadosCartao.equals("0000"));
         
         if (autorizacaoAprovada) {
             // 55 registrarPagamento()
             entidadePagamento.registrarPagamento(dadosCartao);
             return true; // 57 pagamentoAprovado
         }
-        return false;
+        
+        return false; // Pagamento recusado pela operadora
     }
 }

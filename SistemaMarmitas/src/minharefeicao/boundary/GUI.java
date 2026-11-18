@@ -12,6 +12,7 @@ public class GUI {
 
         System.out.println("=== SISTEMA MINHA REFEIÇÃO ===");
         
+        // --- VALIDAÇÃO DE ACESSO E CELULAR ---
         String celular = "";
         while (celular.trim().isEmpty()) {
             System.out.print("Informe seu celular: ");
@@ -36,10 +37,12 @@ public class GUI {
         }
         
         if (!autenticado) {
-            System.out.println("Operação cancelada.");
-            scanner.close(); return; 
+            System.out.println("Número de tentativas excedido. Operação cancelada.");
+            scanner.close(); 
+            return; 
         }
 
+        // --- SELEÇÃO DE PLANO ---
         List<Plano> planos = ctrl.consultarPlanosDisponiveis();
         System.out.println("Planos disponíveis:");
         for (int i = 0; i < planos.size(); i++) System.out.println((i+1) + " - " + planos.get(i));
@@ -60,11 +63,14 @@ public class GUI {
 
         ctrl.iniciarPedido();
         
-        // --- SELEÇÃO DE PRATOS PRINCIPAIS ---
+        // --- SELEÇÃO DE PRATOS COM LIMITE DE QUANTIDADE ---
         boolean maisPratos = true;
-        while (maisPratos) {
+        int qtdPratos = 0;
+        int limitePratos = 2;
+        
+        while (maisPratos && qtdPratos < limitePratos) {
             List<String> pratos = ctrl.obterPratosDisponiveis(planoEscolhido, "Geral");
-            System.out.println("\n=== PRATOS PRINCIPAIS DISPONÍVEIS ===");
+            System.out.println("\n=== PRATOS PRINCIPAIS (Escolha até " + limitePratos + ") ===");
             for (int i = 0; i < pratos.size(); i++) System.out.println((i+1) + " - " + pratos.get(i));
             
             String pratoEscolhido = null;
@@ -77,16 +83,25 @@ public class GUI {
                 } catch (NumberFormatException e) { System.out.println("Erro: Digite apenas NÚMEROS."); }
             }
             ctrl.adicionarPratoAoPedido(pratoEscolhido);
-            System.out.println("-> Prato adicionado com sucesso!");
-            System.out.print("Deseja adicionar outro prato principal? (S/N): ");
-            if (!scanner.nextLine().trim().toUpperCase().startsWith("S")) maisPratos = false;
+            qtdPratos++;
+            System.out.println("-> Prato adicionado (" + qtdPratos + "/" + limitePratos + ")");
+
+            if (qtdPratos < limitePratos) {
+                System.out.print("Deseja adicionar outro prato principal? (S/N): ");
+                if (!scanner.nextLine().trim().toUpperCase().startsWith("S")) maisPratos = false;
+            } else {
+                System.out.println("Limite máximo de pratos atingido.");
+            }
         }
 
-        // --- SELEÇÃO DE ACOMPANHAMENTOS ---
+        // --- SELEÇÃO DE ACOMPANHAMENTOS COM LIMITE DE QUANTIDADE ---
         boolean maisAcomp = true;
-        while (maisAcomp) {
+        int qtdAcomp = 0;
+        int limiteAcomp = 2;
+        
+        while (maisAcomp && qtdAcomp < limiteAcomp) {
             List<String> acomps = ctrl.obterAcompanhamentosDisponiveis();
-            System.out.println("\n=== ACOMPANHAMENTOS DISPONÍVEIS ===");
+            System.out.println("\n=== ACOMPANHAMENTOS (Escolha até " + limiteAcomp + ") ===");
             for (int i = 0; i < acomps.size(); i++) System.out.println((i+1) + " - " + acomps.get(i));
             
             String acompEscolhido = null;
@@ -99,9 +114,15 @@ public class GUI {
                 } catch (NumberFormatException e) { System.out.println("Erro: Digite apenas NÚMEROS."); }
             }
             ctrl.adicionarAcompanhamentoAoPedido(acompEscolhido);
-            System.out.println("-> Acompanhamento adicionado com sucesso!");
-            System.out.print("Deseja adicionar outro acompanhamento? (S/N): ");
-            if (!scanner.nextLine().trim().toUpperCase().startsWith("S")) maisAcomp = false;
+            qtdAcomp++;
+            System.out.println("-> Acompanhamento adicionado (" + qtdAcomp + "/" + limiteAcomp + ")");
+
+            if (qtdAcomp < limiteAcomp) {
+                System.out.print("Deseja adicionar outro acompanhamento? (S/N): ");
+                if (!scanner.nextLine().trim().toUpperCase().startsWith("S")) maisAcomp = false;
+            } else {
+                System.out.println("Limite máximo de acompanhamentos atingido.");
+            }
         }
 
         // --- SELEÇÃO DE BEBIDAS ---
@@ -148,7 +169,7 @@ public class GUI {
             if (!scanner.nextLine().trim().toUpperCase().startsWith("S")) maisSobremesas = false;
         }
 
-        // --- FINALIZAÇÃO ---
+        // --- ENDEREÇO E PAGAMENTO ---
         System.out.println("\nResumo do Pedido: \n" + ctrl.getPedidoAtual().getResumo());
         
         String endereco = "";
@@ -163,12 +184,12 @@ public class GUI {
         
         String dadosCartao = "";
         while (dadosCartao.trim().isEmpty()) {
-            System.out.print("Informe os dados do cartão de crédito: ");
+            System.out.print("Informe os dados do cartão de crédito (Dica: digite '0000' para simular recusa): ");
             dadosCartao = scanner.nextLine();
             if (dadosCartao.trim().isEmpty()) System.out.println("Os dados do cartão são obrigatórios!");
         }
         
-        System.out.println("Processando pagamento...");
+        System.out.println("Processando pagamento junto à operadora...");
         if (ctrl.realizarPagamento(dadosCartao)) {
             System.out.println("\n=== ASSINATURA CONFIRMADA ===");
             System.out.println("Protocolo: " + ctrl.finalizarEGerarProtocolo());
@@ -176,7 +197,7 @@ public class GUI {
             System.out.println("Previsão da primeira entrega: Próxima segunda-feira");
             System.out.println("Dados salvos no arquivo 'assinaturas_db.csv' com sucesso!");
         } else {
-            System.out.println("Pagamento recusado pela operadora do cartão.");
+            System.out.println("\n[FLUXO ALTERNATIVO] Pagamento recusado pela operadora do cartão. Transação cancelada.");
         }
         
         scanner.close();
